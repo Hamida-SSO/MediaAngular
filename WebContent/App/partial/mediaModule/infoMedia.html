@@ -1,0 +1,45 @@
+<div ng-switch="modify">
+	<div ng-switch-when="false">
+		<ul>
+			<li> <span ng-bind="media.titre"></span></li>
+			<li> <span ng-bind="media.auteur"></span></li>
+			<li> <span ng-bind="media.type"></span></li>
+			<!--<li> <span ng-bind="media.emprunteurs"></span></li>  Une liste des emprunteurs -->
+			<!--<li> <span ng-bind="media.images"></span></li>  Une liste des emprunteurs -->
+		</ul>
+		<button class="form-control btn btn-default" ng-click="toggleModify()">Modifier</button>
+	</div>
+	
+	<div ng-switch-when="true">
+		<form name="form" novalidate>
+			<div class="form-group">
+				<label >Titre</label>
+				<input type="text" data-ng-model="media.titre" name="mTitre" class="form-control" required />
+			</div>
+			
+			<div class="form-group">
+				<label >Auteur</label>
+				<input type="text" data-ng-model="media.auteur" name="mAuteur" class="form-control" required />
+			</div>
+			
+			<div class="form-group">
+				<label >Type</label>
+				<select class="form-control selectpicker" data-ng-model="media.type" name="mType">
+					<option>Livre</option>
+					<option>DVD</option>
+					<option>CD</option>
+				</select>
+			</div>
+		
+			<button data-ng-click="update(media)" data-ng-disabled="form.$invalid" class="form-control btn btn-default">Sauvegarder</button>
+		</form> 	
+	</div>
+</div>
+
+<div class="col">
+	<ul class="pager">
+		<li class="previous">
+			<a href="#!/medias/"><span aria-hidden="true">&larr;</span> Retour</a>
+		</li>
+	</ul>
+</div>
