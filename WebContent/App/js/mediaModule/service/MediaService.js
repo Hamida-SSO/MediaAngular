@@ -27,6 +27,10 @@ angular.module('mediaModule').factory('MediaService', ['$http','$location', func
 		$http.post('http://192.168.1.14:8090/resource/media.modification', media);
 	};
 	
+	var createBody = function(media) {
+		$http.post('http://192.168.1.14:8090/resource/media.creation', media);
+	}
+	
 	var changeLocationBody = function(media) {
 		$location.path('/medias/'+ media.id);
 	}
@@ -35,6 +39,7 @@ angular.module('mediaModule').factory('MediaService', ['$http','$location', func
 		getAll : getAllBody,
 		getOne : getOneBody,
 		update : updateBody,
+		create : createBody,
 		changeLocation : changeLocationBody
 	}
 	
