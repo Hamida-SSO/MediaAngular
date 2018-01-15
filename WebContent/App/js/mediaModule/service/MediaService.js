@@ -29,18 +29,24 @@ angular.module('mediaModule').factory('MediaService', ['$http','$location', func
 	
 	var createBody = function(media) {
 		$http.post('http://192.168.1.14:8090/resource/media.creation', media);
-	}
+	};
 	
-	var changeLocationBody = function(media) {
+	var goMediaBody = function(media) {
 		$location.path('/medias/'+ media.id);
-	}
+	};
+	
+	var goMediaCreateBody = function() {
+		$location.path('/media/create');
+	};
+	
 	
 	return {
 		getAll : getAllBody,
 		getOne : getOneBody,
 		update : updateBody,
 		create : createBody,
-		changeLocation : changeLocationBody
+		goMedia : goMediaBody,
+		goMediaCreate : goMediaCreateBody
 	}
 	
 }]);

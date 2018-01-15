@@ -11,6 +11,10 @@ angular.module('mediaModule').controller('ListMediaCtrl', function($scope, Media
 		}
 	);
 	$scope.goMedia = function(media) {
-		MediaService.changeLocation(media);
-	}
+		MediaService.goMedia(media);
+	};
+	
+	$scope.goMediaCreate = function() {
+		MediaService.goMediaCreate();
+	};
 });

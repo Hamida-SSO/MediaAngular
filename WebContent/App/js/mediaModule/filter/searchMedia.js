@@ -11,7 +11,6 @@ angular.module('mediaModule').filter('searchMedia', function() {
 				output.push(media[index]);
 			}
 		}
-		console.log(output);
 		return output;
 	}
 });
