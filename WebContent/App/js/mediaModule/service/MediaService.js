@@ -24,12 +24,13 @@ angular.module('mediaModule').factory('MediaService', ['$http','$location', func
 	};
 	
 	var updateBody = function(media) {
-		$http.post('http://192.168.1.14:8090/resource/media.modification', media);
-	};
+		$http.post('http://192.168.1.14:8090/resource/media.modification', media).then(function(response) {
+			goMediaBody(response.data);
+		});
+	}
 	
 	var createBody = function(media) {
 		$http.post('http://192.168.1.14:8090/resource/media.creation', media).then(function(response) {
-			changeLocationBody(response.data);
 		});
 	}
 	
