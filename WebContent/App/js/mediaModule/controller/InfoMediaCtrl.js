@@ -7,9 +7,7 @@ angular.module('mediaModule').controller('InfoMediaCtrl', function($routeParams,
 	$scope.update = function(media) {
 		MediaService.update(media);
 	};
-	
-	
-	
+
 	MediaService.getOne($routeParams.id).then( 
 		function(data)
 		{

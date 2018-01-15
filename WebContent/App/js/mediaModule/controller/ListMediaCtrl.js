@@ -10,5 +10,7 @@ angular.module('mediaModule').controller('ListMediaCtrl', function($scope, Media
 			console.log("Error ListMediaCtrl - getAll");
 		}
 	);
-	
+	$scope.goMedia = function(media) {
+		MediaService.changeLocation(media);
+	}
 });

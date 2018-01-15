@@ -1,0 +1,21 @@
+.cover {
+	width: 80px;
+	heigth: 111px;
+}
+
+.thumbnail:hover {
+	border-color: blue;
+	cursor: pointer;
+}
+.flyover:hover {
+	cursor: pointer;
+}
+.thumbnail {
+	height: 240px;
+}
+
+.caption h3{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

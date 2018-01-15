@@ -1,15 +1,21 @@
 <div ng-switch="modify">
+
 	<div ng-switch-when="false">
-		<ul>
-			<li> <span ng-bind="media.titre"></span></li>
-			<li> <span ng-bind="media.auteur"></span></li>
-			<li> <span ng-bind="media.type"></span></li>
-			<!--<li> <span ng-bind="media.emprunteurs"></span></li>  Une liste des emprunteurs -->
-			<!--<li> <span ng-bind="media.images"></span></li>  Une liste des emprunteurs -->
-		</ul>
-		<button class="form-control btn btn-default" ng-click="toggleModify()">Modifier</button>
+		<div class="pull-right">
+			<span ng-click="" class="fa fa-pencil-square-o fa-2x flyover" aria-hidden="true"></span>
+		</div>
+		<div class="media">
+			<div class="media-left media-middle">
+				<img class="media-object cover" ng-src="http://192.168.1.14:8090/{{media.images.couverture}}">
+			</div>
+			<div class="media-body">
+				<h3 class="media-heading">{{media.titre}} <small>({{media.type}})</small></h3>
+				<span>{{media.auteur}}</span>
+				<!--<li> <span ng-bind="media.emprunteurs"></span></li>  Une liste des emprunteurs -->
+			</div>
+		</div>
 	</div>
-	
+	 
 	<div ng-switch-when="true">
 		<form name="form" novalidate>
 			<div class="form-group">
@@ -30,11 +36,11 @@
 					<option>CD</option>
 				</select>
 			</div>
-		
 			<button data-ng-click="update(media)" data-ng-disabled="form.$invalid" class="form-control btn btn-default">Sauvegarder</button>
 		</form> 	
 	</div>
 </div>
+
 
 <div class="col">
 	<ul class="pager">
