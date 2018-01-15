@@ -1,17 +1,31 @@
 <div class="row">
-	<div class="col-lg-6">
-		<div class="input-group">
-			<input type="text" ng-model="search.titre" class="form-control" placeholder="Search for...">
-			<!-- <span class="input-group-btn">
-				<span class="btn btn-default" aria-hidden="true" type="button">
-					<span class="fa fa-search flyover" aria-hidden="true"></span>
-				</span>
-			</span> -->
-		</div>
+	<div class="col-sm-6 col-centered">
+		<input type="text" ng-model="search.titre" class="form-control icon icon-search" placeholder="Search for...">
 	</div>
 </div>
-<div class="row">	
-	<div class="col-sm-6 col-md-3" ng-repeat="media in listMedia | filter : search">
+
+<div class="row">
+	<div class="col-sm-4 col-centered">
+
+		<label class="btn btn-primary">
+			Livre <input type="checkbox" class="badgebox" ng-model="type1" ng-checked="true" ng-init='type1=true'>
+			<span class="badge">&check;</span>
+		</label>
+		
+		<label class="btn btn-primary">
+			CD <input type="checkbox" class="badgebox" ng-model="type2" ng-checked="true" ng-init='type2=true'>
+			<span class="badge">&check;</span>
+		</label>
+		
+		<label  class="btn btn-primary">
+			DVD <input  type="checkbox" class="badgebox"  ng-model="type3" ng-checked="true" ng-init='type3=true'>
+			<span class="badge">&check;</span>
+		</label>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6 col-md-3" ng-repeat="media in listMedia | filter : search | searchMedia : type1:type2:type3">
 		<span ng-click="goMedia(media)" class="thumbnail">
 			<img ng-src="http://192.168.1.14:8090/{{media.images.couverture}}" class="cover">
 			<div class="caption">
@@ -19,5 +33,6 @@
 			</div>
 		</span>
 	</div>
-	
 </div>
+
+
