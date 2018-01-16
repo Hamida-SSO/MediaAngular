@@ -6,7 +6,7 @@
 		</div>
 		<div class="media">
 			<div class="media-left media-middle">
-				<img class="media-object cover" ng-src="http://192.168.1.14:8090/{{media.images.couverture}}">
+				<img class="media-object cover" ng-src="http://192.168.1.15:8090/{{media.images.couverture}}">
 			</div>
 			<div class="media-body">
 				<h3 class="media-heading">{{media.titre}} <small>({{media.type}})</small></h3>
@@ -36,7 +36,7 @@
 					<option>CD</option>
 				</select>
 			</div>
-			<button data-ng-click="update(media)" data-ng-disabled="form.$invalid" class="form-control btn btn-default">Sauvegarder</button>
+			<button data-ng-click="update(media)" data-ng-disabled="form.$invalid" class="form-control btn btn-primary">Sauvegarder</button>
 		</form> 	
 	</div>
 </div>
