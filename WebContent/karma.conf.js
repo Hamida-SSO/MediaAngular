@@ -15,8 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    	'App/js/test.js',
-    	'App/js/mediaModule/controller/ListMediaCtrl-test.js'
+    	'App/resources/jquery-3.2.1.js',
+    	'App/resources/bootstrap.js',
+    	'App/resources/angular.js',
+    	'App/resources/angular-route.js',
+    	'App/js/**/*.js'
     ],
 
 
