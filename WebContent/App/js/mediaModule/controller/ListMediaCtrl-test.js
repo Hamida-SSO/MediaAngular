@@ -14,6 +14,6 @@ describe('ListMediaCtrl', function() {
 	});
 	
 	it('should have property published by controller', function() {
-		expect(scope.one).toEqual(1);
+		expect(scope.listMedia).toEqual([]);
 	});
 });
